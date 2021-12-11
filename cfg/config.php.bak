@@ -1,5 +1,0 @@
-<?php
-$mysqli = new mysqli("0.0.0.0", "root", "", "text", 3306);
-
-echo $mysqli->host_info . "\n";
-?>
