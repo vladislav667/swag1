@@ -1,5 +1,14 @@
 <?php
-$mysqli = new mysqli("0.0.0.0", "root", "", "text", 3306);
-
-echo $mysqli->host_info . "\n";
+$servername = "localhost";
+$database = "webserver";
+$username = "root";
+$password = "123456789";
+// Создаем соединение
+$conn = mysqli_connect($servername, $username, $password, $database);
+// Проверяем соединение
+if (!$conn) {
+    die("Не удалось подключится к базе данных: " . mysqli_connect_error());
+}
+echo "Успешное подключение к базе данных";
+mysqli_close($conn);
 ?>

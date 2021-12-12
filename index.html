@@ -1,121 +1,41 @@
 <!doctype html>
 <html lang="ru">
-<?php require_once 'cfg/config.php';?>
+<?php include_once "cfg/config.php"?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/chatbot/gerb.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/chatbot/chatbot.css">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/animation.js">
   <title>Росздравнадзор</title>
-  <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    html {
-      font-family: sans-serif;
-      line-height: 1.15;
-      -webkit-text-size-adjust: 100%;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    }
-
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-        'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-        'Noto Color Emoji';
-      font-size: 0.75rem;
-      font-weight: 400;
-      line-height: 1.5;
-      color: #212529;
-      text-align: left;
-      background-color: #fff;
-      margin: 50px;
-    }
-
-    h1 {
-      text-align: center;
-    }
-  </style>
-  <link rel="stylesheet" href="/bot/bot.css">
 </head>
 
 <body>
 
-
-
-  <!-- bot-btn -->
-  <div class="bot-btn">
+  <!--Menu-->
+  <div class="topnav" id="myTopnav">
+    <a href="/menu/One.html" class="active">Росздравнадзор</a>
+    <a href="/menu/1.html" class="active">Жалобы</a>
+    <a href="/menu/Blagodar.html" class="active">Поблагодарить</a>
+    <a href="#contact">О нас</a>
+    <a href="#about">Статистика</a>
+    <a href="/menu/vxod.html">Вход</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  <!--image-->
+  <div class='background'>
+  </div>
+  <!-- chatbot-btn -->
+  <div class="chatbot-btn">
     <!--<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" width="20" height="20">
       <path fill="currentColor"
         d="M14 8.999v-5a2.003 2.003 0 00-2-2H3a2.003 2.003 0 00-2 2v5a2.003 2.003 0 002 2v1.694a.302.302 0 00.486.244l2.587-1.945H12A1.997 1.997 0 0014 9zm3-2h-2v2a3.003 3.003 0 01-3 3H7v2a2.003 2.003 0 002 2h3.927l2.59 1.941c.198.15.483.004.483-.243v-1.701h1a2.003 2.003 0 002-1.997v-5a2.003 2.003 0 00-2-2z" />
     </svg>-->
-    <div class="bot-toggle-tooltip">Есть вопрос?</div>
   </div>
-
-
-  <!-- FingerPrint JS -->
-  <script src="/bot/fp2.js"></script>
-  <!-- Bot JS -->
-  <script src="/bot/bot.js"></script>
-
-  <script>
-    const keyLS = 'fingerprint';
-    
-    const botBtnSel = '.bot-btn';
-    
-    const url = '/bot/bot.php';
-    
-    const data = {
-      bot: {
-        0: {
-          content: 'Привет<?php echo $PHP_SELF;?>', human: [0, 1, 2]
-        },
-        1: { content: 'Как вас зовут и чем я могу вам помочь?' , human: [4] },
-        2: { content: 'Как вас зовут?', human: [3] },
-        3: { content: '{{name}}, для этого перейдите на <a href=URL ВСТАВИТЬ САЙТ" target="_blank">эту страницу</a>', human: [6] },
-        4: { content: '{{name}}, Ваше имя?', human: [] },
-		5: { content: '{{name}}, Ваше имя?', human: [4, 5] },
-		 8: { content: '{{name}}, Ваше имя?', human: [] },
-      },
-      human: {
-        0: { content: 'Я хочу подать жалобу', bot: 1 },
-        1: { content: 'Я хочу задать другой вопрос', bot: 2 },
-        2: { content: 'О боте', bot: 4 },
-        3: { content: 'В начало диалога', bot: 3 },
-        4: { content: '', bot: 3, name: 'name' },
-        5: { content: 'по  номеру телефона', bot: 7 },
-        6: { content: 'по email', bot: 8 },
-        7: { content: '', bot: 9, name: 'contact' },
-      }
-    }
-	
-     
-   let fingerprint = localStorage.getItem(keyLS);
-    if (!fingerprint) {
-     Fingerprint2.get(function (components) {
-       fingerprint = Fingerprint2.x64hash128(components.map(function (pair) { return pair.value }).join(), 31)
-        localStorage.setItem(keyLS, fingerprint)
-      });
-    }
-	
-    
-    BotByItchiefInit({
-      botBtnSel: botBtnSel,
-      data: data,
-      url: url,
-      keyLS: keyLS
-    });
-
-    setTimeout(function () {
-      const botToggleTooltip = document.querySelector('.bot-toggle-tooltip');
-      botToggleTooltip.classList.add('bot-toggle-tooltip_show');
-      setTimeout(function () {
-        botToggleTooltip.classList.remove('bot-toggle-tooltip_show');
-      }, 10000)
-    }, 10000)
-
-  </script>
 
 </body>
 

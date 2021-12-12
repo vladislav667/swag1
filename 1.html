@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ru">
+<?php include_once "cfg/config.php"?>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/chatbot/gerb.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/chatbot/chatbot.css">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/css/jaja.css">
+  <link rel="stylesheet" href="/animation.js">
+  <title>Росздравнадзор</title>
+  <style>
+        label{display: inline-block;width: 170px;}
+        form > div{margin-bottom: 5px;}
+    </style>
+  </head>
+
+<body>
+  <!--Menu-->
+  <div class="topnav" id="myTopnav">
+    <a href="/menu/One.html" class="active">Росздравнадзор</a>
+    <a href="/1.html" class="active">Жалобы</a>
+    <a href="/menu/Blagodar.html" class='active'>Поблагодарить</a>
+    <a href="#contact">О нас</a>
+    <a href="#about">Статистика</a>
+    <a href="/menu/vxod.html">Вход</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  <div class='background'>
+  </div>
+  <!-- chatbot-btn -->
+  <div class="chatbot-btn">
+    <!--<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" width="20" height="20">
+      <path fill="currentColor"
+        d="M14 8.999v-5a2.003 2.003 0 00-2-2H3a2.003 2.003 0 00-2 2v5a2.003 2.003 0 002 2v1.694a.302.302 0 00.486.244l2.587-1.945H12A1.997 1.997 0 0014 9zm3-2h-2v2a3.003 3.003 0 01-3 3H7v2a2.003 2.003 0 002 2h3.927l2.59 1.941c.198.15.483.004.483-.243v-1.701h1a2.003 2.003 0 002-1.997v-5a2.003 2.003 0 00-2-2z" />
+    </svg>-->
+    <div class="chatbot-toggle-tooltip">
+      <div>
+	<h2>ЗАПОЛНИТЕ ФОРМУ</h2>
+    <form action="/cfg/config.php" method="POST">
+        <div>
+            <label for="Title">Причина жалобы:</label>
+            <input type="text" id="Title" name="book_title" required>
+        </div>
+        <div>
+            <label for="Author">Введите Ф.И.О:</label>
+            <input type="text" id="Author" name="book_author" required>
+        </div>
+<div>
+  <label for="Adres">Введите адрес: </label>
+  <input type="text" id="Adres" name="book_adres" required>
+</div>
+<div>
+  <label for="Email">Введите эл. адрес:</label>
+  <input type="text" id="Adres" name="book_email" required>
+</div>
+<div>
+  <label for="Telephone">Введите номер телефона:</label>
+  <input type="text" id="Telephone" name="book_telephone" required>
+</div>
+        <div style="display: inline-block; vertical-align: top;">
+            <label><h3>ТИП ОБРАЩЕНИЯ:</h3> </label>
+        </div>
+        <div style="display: inline-block; vertical-align: top;">
+            <label for="Genre_drama">Длительное время ожидания</label>
+            <input type="checkbox" id="Genre_novel" name="book_genre[]" value="">
+            <label for="Genre_novel">Не качественные медицинские услуги</label>
+            <input type="checkbox" id="Genre_narrative" name="book_genre[]" value="">
+            <label for="Genre_tale">Отказ медицинской помощи</label>
+            <input type="checkbox" id="Genre_poem" name="book_genre[]" value="">
+            <label for="Genre_poem">Нарушение условий платного договора</label>
+            <input type="checkbox" id="Genre_poem" name="book_genre[]" value="">
+            <label for="Genre_poem"><h4>Если в приведенном списке нет нужного Вам раздела, укажите свой</h4></label>
+            <input type="text" id="Author" name="book_author" required>
+        </div>   
+        <input type="submit" value="Отправить">
+    </form>
+	
+  </div>
+
+</body>
+
+</html>

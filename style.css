@@ -1,0 +1,249 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(109,109,230,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #212529;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.397);
+  margin: 50px;
+}
+.chatbot-btn{
+  height: 1500px;
+}
+
+h1{text-align: center;
+  font-size: 25px;
+}
+h2{
+  text-align: center;
+  font-size: 25px;
+  margin-right:40px;
+  margin-left: 20px;
+}
+.chatbot-toggle-tooltip{
+  font-size: 17px;
+}
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: rgb(53, 53, 53);
+  overflow: hidden;
+  width: 100%;
+  position:relative;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  text-align: center;
+  display:flexbox;
+  color: #f2f2f2;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #3d584f00;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: flex;
+  }
+}
+
+.formfon {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+form {
+  /* Расположим форму по центру страницы */
+  margin: 0 auto;
+  width: 400px;
+  padding: 1em;
+  border: 1px solid #CCC;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+h3{
+  /* Определим контур
+  font-size: 17px;
+}
+form li + li {
+  margin-top: 1em;
+}
+
+label {
+  /* Определим размер и выравнивание */
+  display: inline-block;
+  width: 90px;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 3px;
+  border-radius: 10px; 
+}
+input,
+textarea {
+  /* Убедимся, что все поля имеют одинаковые настройки шрифта
+     По умолчанию в textarea используется моноширинный шрифт */
+  font: 1em sans-serif;
+
+  /* Определим размер полей */
+  width: 300px;
+  box-sizing: border-box;
+
+  /* Стилизуем границы полей */
+  border: 1px solid #999;
+}
+
+input:focus,
+textarea:focus {
+  /* Дополнительная подсветка для элементов в фокусе */
+  border-color: #000;
+}
+
+textarea {
+  /* Выравним многострочные текстовые поля с их текстами-подсказками */
+  vertical-align: top;
+
+  /* Предоставим пространство для ввода текста */
+  height: 5em;
+}
+
+.button {
+  /* Выравним кнопки с их текстами-подсказками */
+  padding-left: 90px; /* same size as the label elements */
+}
+
+button {
+  /* Этот дополнительный внешний отступ примерно равен расстоянию
+     между текстами-подсказками и текстовыми полями */
+  margin-left: .5em;
+}
+/* Bordered form */
+form {
+  border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #31389960;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width:100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+      display: block;
+      float: none;
+  }
+  .cancelbtn {
+      width: 100%;
+  }
+}
+.container{
+  margin-bottom:  30px;
+  margin: 7px;
+}
